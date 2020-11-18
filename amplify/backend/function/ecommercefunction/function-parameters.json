@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "auth": {
+      "ecommerceapp7b2fce4e": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "producttable": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
