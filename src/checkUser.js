@@ -5,9 +5,14 @@ const checkUser = async (updateUser) => {
     try {
         const userData = await Auth.currentSession()
 
+        // Sentinel code
         if (!userData) {
             console.log('userData: ', userData);
+
+            // Call callback with empty object
             updateUser({});
+            
+            // stop running this function
             return;
         }
 
@@ -25,10 +30,10 @@ const checkUser = async (updateUser) => {
             payload['cognito:groups'] 
             && payload['cognito:groups'].includes('Admin')
             
-            updateUser({
-        username: payload['cognito:username'],
-        isAuthorized
-        })
+        updateUser({
+            username: payload['cognito:username']
+            , isAuthorized
+        });
     }
 
     catch (err) {
@@ -36,4 +41,4 @@ const checkUser = async (updateUser) => {
     }
 }
 
-export default checkUser
+export default checkUser;
