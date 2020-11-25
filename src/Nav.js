@@ -28,6 +28,7 @@ const Nav = ({ current }) => {
                 'auth'
                 , (data) => {
 
+                    console.log(data);
                     // More complex destrucuring: data.payload.event
                     const { payload: { event } } = data;
                     console.log('event: ', event);
