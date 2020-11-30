@@ -5,17 +5,6 @@ const checkUser = async (updateUser) => {
     try {
         const userData = await Auth.currentSession()
 
-        // Sentinel code
-        if (!userData) {
-            console.log('userData: ', userData);
-
-            // Call callback with empty object
-            updateUser({});
-            
-            // stop running this function
-            return;
-        }
-
         console.log(userData);
 
         // Complex nested property destructuring
@@ -38,6 +27,7 @@ const checkUser = async (updateUser) => {
 
     catch (err) {
         console.log(err);
+        updateUser({});
     }
 }
 
