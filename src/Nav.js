@@ -72,6 +72,9 @@ const Nav = ({ current }) => {
                     )
                 }
             </Menu>
+            <h3>
+                Hello { user.username }
+            </h3>
         </div>
     );
 };

@@ -20,7 +20,7 @@ const checkUser = async (updateUser) => {
             && payload['cognito:groups'].includes('Admin')
             
         updateUser({
-            username: payload['cognito:username']
+            username: payload['email']  // cognito:username
             , isAuthorized
         });
     }
